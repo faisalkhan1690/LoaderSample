@@ -1,6 +1,6 @@
-# Loaders Example 
+Loaders Example 
 ===================================
-> An Example how to use loaders in android 
+An Example how to use loaders in android 
 This sample cover two things 
 
 1. AsyncTask Loader
