@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LoaderSample</string>
+    <string name="async_task_loader_sample">Async Task Loader Sample</string>
+</resources>
