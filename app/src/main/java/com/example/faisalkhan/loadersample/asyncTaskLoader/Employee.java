@@ -1,15 +1,16 @@
 package com.example.faisalkhan.loadersample.asyncTaskLoader;
 
 /**
- * Created by faisal.khan on 2/25/2017.
+ * Model class for employee data using with AsyncTaskLoader
+ *
+ * @author Faisal Khan
  */
+class Employee {
+    String empId;
+    String empName;
 
-public class Employee {
-    public String empid;
-    public String name;
-
-    public Employee(String id, String name) {
-        this.empid = id;
-        this.name = name;
+    Employee(String id, String name) {
+        this.empId = id;
+        this.empName = name;
     }
 }

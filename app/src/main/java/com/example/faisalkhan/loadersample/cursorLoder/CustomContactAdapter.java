@@ -19,12 +19,23 @@ import android.widget.TextView;
 
 import com.example.faisalkhan.loadersample.R;
 
-public class CustomContactAdapter extends BaseAdapter {
-    Cursor cursor;
-    Context mContext;
-    LayoutInflater inflater;
+/**
+ * Adapter class for loader data in list using CursorLoaderSample
+ *
+ * For details how what is BaseAdapter follow link :-
+ * https://developer.android.com/reference/android/widget/BaseAdapter.html
+ *
+ * For more details about adapters follow link :-
+ * https://developer.android.com/reference/android/widget/Adapter.html
+ *
+ * @author Faisal Khan
+ */
+class CustomContactAdapter extends BaseAdapter {
+    private Cursor cursor;
+    private Context mContext;
+    private LayoutInflater inflater;
 
-    public CustomContactAdapter(Context context, Cursor cursor) {
+    CustomContactAdapter(Context context, Cursor cursor) {
         mContext = context;
         this.cursor = cursor;
         inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -53,14 +64,14 @@ public class CustomContactAdapter extends BaseAdapter {
         if (view == null) {
             view = inflater.inflate(R.layout.contact_list_element, parent, false);
             holder = new Holder();
-            holder.tvCOntactName = (TextView) view.findViewById(R.id.tvContactName);
+            holder.tvContactName = (TextView) view.findViewById(R.id.tvContactName);
             holder.tvContactNumber = (TextView) view.findViewById(R.id.tvContactNumber);
             holder.ivContactImage = (ImageView) view.findViewById(R.id.ivContactImage);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
         }
-        holder.tvCOntactName.setText(cursor.getString(cursor.getColumnIndex(Phone.DISPLAY_NAME)));
+        holder.tvContactName.setText(cursor.getString(cursor.getColumnIndex(Phone.DISPLAY_NAME)));
         holder.tvContactNumber.setText(cursor.getString(cursor.getColumnIndex(Phone.NUMBER)));
         String imageUri = cursor.getString(cursor.getColumnIndex(Phone.PHOTO_URI));
         try {
@@ -74,8 +85,9 @@ public class CustomContactAdapter extends BaseAdapter {
         return view;
     }
 
-    class Holder {
-        TextView tvCOntactName, tvContactNumber;
+    private class Holder {
+        TextView tvContactName;
+        TextView tvContactNumber;
         ImageView ivContactImage;
     }
 

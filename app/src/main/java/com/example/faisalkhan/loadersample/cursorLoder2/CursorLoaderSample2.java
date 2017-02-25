@@ -16,6 +16,24 @@ import com.example.faisalkhan.loadersample.R;
 
 import java.util.ArrayList;
 
+/**
+ * CursorLoaderSample2 is a activity class that will show how to user CursorLoader in android.
+ *
+ * The concept of Loaders was introduced in Android 3.0 (API Level 11).
+ * There are three key benefits of using a CursorLoader:
+ *      The query is handled on a background thread for you (courtesy of being built on AsyncTaskLoader)
+ *      so that large data queries do not block the UI.
+ *      This is something the docs recommended for you to do when you’re using a plain Cursor, but now it's done under the hood.
+ *      CursorLoader is auto-updating. In addition to performing the initial query, CursorLoader also registers a ContentObserver
+ *      with the data set you requested and calls forceLoad() on itself when the data set changes.
+ *      This results in getting async callbacks anytime the data changes in order to update the view.
+ *      Now follow these simple steps: Here we will create a list of all the contacts stored in an android device.
+ *
+ * for more details follow link :- https://developer.android.com/reference/android/content/CursorLoader.html
+ *
+ * @author Faisa Khan
+ *
+ */
 public class CursorLoaderSample2 extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private TextView resTextView;
@@ -60,7 +78,7 @@ public class CursorLoaderSample2 extends AppCompatActivity implements LoaderMana
         cursor.moveToFirst();
         StringBuilder res = new StringBuilder();
         while (!cursor.isAfterLast()) {
-            res.append("\n" + cursor.getString(21) + "-" + cursor.getString(22));
+            res.append("\n").append(cursor.getString(21)).append("-").append(cursor.getString(22));
 
             cursor.moveToNext();
         }
@@ -77,7 +95,6 @@ public class CursorLoaderSample2 extends AppCompatActivity implements LoaderMana
 
     @Override
     protected void onDestroy() {
-        // TODO Auto-generated method stub
         super.onDestroy();
     }
 

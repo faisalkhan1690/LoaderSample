@@ -6,8 +6,19 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeLoader extends AsyncTaskLoader<List<Employee>> {
-    public EmployeeLoader(Context context) {
+/**
+ * Loader class that extends AsyncTaskLoader
+ *
+ * Task of this loader class is to load data and send back to its caller class.
+ *
+ * For more details about AsyncTaskLoader loader follow link:-
+ * https://developer.android.com/reference/android/content/AsyncTaskLoader.html
+ *
+ * @author Faisal Khan
+ *
+ */
+class EmployeeLoader extends AsyncTaskLoader<List<Employee>> {
+    EmployeeLoader(Context context) {
         super(context);
     }
     @Override
