@@ -36,7 +36,7 @@ class EmployeeAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup parent) {
         Employee emp = (Employee) getItem(position);
         if (view == null) {
-            view = inflater.inflate(R.layout.employeedata, parent);
+            view = inflater.inflate(R.layout.employeedata, null);
         }
         TextView tvEmpId = (TextView) view.findViewById(R.id.empid);
         tvEmpId.setText(emp.empId);
